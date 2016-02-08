@@ -1,5 +1,6 @@
 TARGETS		:= $(sort $(patsubst %.cml,%,$(wildcard *.cml)))
 GIT_BINARY 	:= git
+GIT_PRE_ARGS	:= --work-tree=../ --git-dir=../.git
 GIT_ARGS 	:= cherry-pick -x --allow-empty
 
 all: $(TARGETS)
