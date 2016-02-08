@@ -14,6 +14,6 @@ endif
 %: %.cml
 	@@echo Processing CML: $(patsubst %.cml,%, $<) $(REDIRECT)
 	@@for commit in `cat $<`; do \
+		echo ...running $$commit $(REDIRECT); \
 		$(GIT_BINARY) $(GIT_PRE_ARGS) $(GIT_ARGS) $$commit $(REDIRECT); \
-		echo $$commit $(REDIRECT); \
 	done 
